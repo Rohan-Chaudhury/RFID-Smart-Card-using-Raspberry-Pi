@@ -1,19 +1,19 @@
-INSTALLATION OF RFID CARD SYSTEM IN OUR COLLEGE
-Introduction:
+# INSTALLATION OF RFID CARD SYSTEM IN OUR COLLEGE
+# Introduction:
     • This project aims to use single card for many purposes related to academic, mess, library with some advanced technology to speed up daily tasks related to ID card.
     • Most of the time it’s not possible to carry all the card with us so we face many problems in our daily lives. 
     • This problem can be solved by using RFID card which have a unique id through which we can fetch data from the server and all the necessary details can be obtained digitally.
     • By combining all the cards into one by using RFID technology we can not only rid ourselves of maintaining many cards but also we can digitize our daily works. 
 
-Motivation:
+# Motivation:
     • We have observed that our wallets get filled with many cards such as college id card, mess card, hall card, library card,club members card and many more personal card like atm and others.
     • During exam time to enter into the library we have to go through a very large queue to enter the log details which is time consuming and irritating during the exams.
     • Not only library each and every place where we have to maintain the log details we have to go through a very lengthy process and also the maintenance of these data is quite hectic. 
 
-Project details :
+# Project details :
 The above problems can be solved by having a single RFID which can be programmed to contain the unique number which corresponds to the data stored in the database of that student or faculty.
 The RFID reader will fetch the data stored in the card and request the server and server will send back the relevant data back.
-STEPS TO INSTALL THE RASPBIAN OS:
+# STEPS TO INSTALL THE RASPBIAN OS:
 Headless Raspberry Pi Setup
 Step 1. Downloading Raspbian Image
 We head over here to download a copy of the Raspbian image. The “Lite” version will do.
@@ -44,7 +44,7 @@ Wiring the RFID RC522
 
 On our RFID RC522 there are 8 possible connections on it, these being SDA (Serial Data Signal), SCK(Serial Clock), MOSI (Master Out Slave In), MISO (Master In Slave Out), IRQ (Interrupt Request), GND (Ground Power), RST (Reset-Circuit) and 3.3v (3.3v Power In). We will need to wire all of these but the IRQ to our Raspberry Pi’s GPIO pins.
 
-The following table shows our connections:
+# The following table shows our connections:
 SDA connects to Pin 24.
 SCK connects to Pin 23.
 MOSI connects to Pin 19.
@@ -54,7 +54,7 @@ RST connects to Pin 22.
 3.3v connects to Pin 1.
 
 
- Setting up Raspbian for the RFID RC522
+# Setting up Raspbian for the RFID RC522
 Before we begin the process of utilizing the RFID RC522 on our Raspberry Pi we will first have to make changes to its configuration. By default, the Raspberry Pi has the SPI (Serial Peripheral Interface) disabled, which is a bit of a problem as that is what our RFID reader circuit runs through. Following the steps below we can configure our Raspberry Pi and Raspbian to utilize the SPI interface.
 1. First we have to open the raspi-config tool, we can do this by opening terminal and running the following command:
 sudo raspi-config
@@ -70,7 +70,7 @@ sudo reboot
 lsmod | grep spi
 If we see spi_bcm2835 then we can proceed.
 
- Getting Python ready for the RFID RC522
+# Getting Python ready for the RFID RC522
 Now that we have wired up our RFID RC522 circuit to the Raspberry Pi we can now power it on and begin the process of programming simple scripts in Python to interact with the chip.
 .
 1. We first need to update our Pi
@@ -93,7 +93,7 @@ cd ~
 git clone https://github.com/pimylifeup/MFRC522-python.git
 6. With the repository now saved to our Raspberry Pi we can begin programming for our RFID RC522. 
 
- Writing with the RFID RC522
+# Writing with the RFID RC522
 To write data into the RFID card we type the following code into Write.py:
 
 #!/usr/bin/env python
@@ -118,7 +118,7 @@ Working steps:
         2) Generate a random number 
         3) Send url Request with the registration number and unique card number 
         4) Write the number to the card
-Reading with the RFID RC522 
+# Reading with the RFID RC522 
 Now that we have written our script to write to RFID tags using our RC522 we can now write a script that will read this data back off the tag.
 
 We start off by changing directory to make sure we are in the right place, and then we can run nano to begin writing our Read.py script.
@@ -150,32 +150,32 @@ Working steps:
     2) Sending url REQUEST with the unique card number 
     3) Fetching the response data and using it as we want
 
-Server Set-up:
+# Server Set-up:
 For making the server we used server-side scripting language php. Basically we are creating a database which contains the informations regarding students and the card.
-Working step:
+# Working steps:
 While registration when students are filling their forms the information is stored in the database and during card issue to respective students all he needs to do is write registration number and tap the card. 
 For different platform like library, mess, academic section different software is there which fetch different data from the server.
-	During Registration
+# 	During Registration
         5) Fetching data from the url by REQUEST method
         6) Establish connection with server
         7) Selecting the database
         8) Inserting the data into students details table in the database
 
-While issuing the Card
+# While issuing the Card
     1) Fetch the registration number and the Unique Card Number from the url by REQUEST method
     2) Establish connection with server
     3) Selecting the database
     4) Inserting the data into registration-unique number table 
-While using the Card
+# While using the Card
     1) Fetch the unique card number from url by REQUEST method
     2) Establish connection with server
     3) Selecting the database 	
     4) From the registration-unique number table we get the registration number and from using that we can get the details of student and send back the details as a JSON.
-Required Components :
+# Required Components :
     • RFID card
     • RFID reader
     • Raspberrypi
-SOFTWARE REQUIREMENTS:
+# SOFTWARE REQUIREMENTS:
 Lamp-server
 Raspbian-OS
 PROGRAMMING LANGUAGES USED:
