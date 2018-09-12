@@ -5,7 +5,7 @@
     • This problem can be solved by using RFID card which have a unique id through which we can fetch data from the server and all the necessary details can be obtained digitally.
     • By combining all the cards into one by using RFID technology we can not only rid ourselves of maintaining many cards but also we can digitize our daily works. 
     
-    The detailed project is shown in my youtube video: https://www.youtube.com/watch?v=ixSe3UJGEWM&t=75s
+    The detailed project is shown in my youtube video:  https://www.youtube.com/watch?v=ixSe3UJGEWM&t=75s
 
 # Motivation:
     • We have observed that our wallets get filled with many cards such as college id card, mess card, hall card, library card,club members card and many more personal card like atm and others.
